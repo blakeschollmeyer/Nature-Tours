@@ -1,0 +1,16 @@
+@mixin clearfix {
+  &::after {
+    // don't want to see element on page, so use ""
+    content: "";
+    display: table;
+    // clear both float left and float right
+    clear: both;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,13 @@
+/* start clean without any padding or margins */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* 10/16=.625*16=10px | root font size (rem based off the root, in this case 1rem = 10px) */
+  font-size: 62.5%;
+}

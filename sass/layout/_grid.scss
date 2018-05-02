@@ -1,0 +1,54 @@
+.row {
+  // fills complete width if 114rem is too much
+  max-width: $grid-width;
+  // trick to center block elements
+  margin: 0 auto;
+
+  // everything except the last child
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+
+  @include clearfix;
+
+  // allows the selection where all the class attributes start with "col-"
+  // could use *= instead to grab all instances of "col-"
+  // could use $= instead to grab all instances that end in "col-"
+  [class^="col-"] {
+    float: left;
+
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+
+  .col-1-of-2 {
+    // 1 gutter, 2 columns
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+  }
+
+  .col-1-of-3 {
+    // 2 gutters, 3 columns
+    width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+  }
+
+  .col-2-of-3 {
+    // 3 gutters, 4 columns
+    width: calc(2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal});
+  }
+
+  .col-1-of-4 {
+    // 3 gutters, 4 columns
+    width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+  }
+
+  .col-2-of-4 {
+    // 3 gutters, 4 columns
+    width: calc(2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal});
+  }
+
+  .col-3-of-4 {
+    // 3 gutters, 4 columns
+    width: calc(3 * ((100% - 3 * #{$gutter-horizontal}) / 4) +  2 * #{$gutter-horizontal});
+  }
+}
